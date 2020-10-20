@@ -1,39 +1,21 @@
-import React, {Component} from 'react';
-import { Redirect, Route, Switch } from "react-router-dom";
-import './App.css';
-import Homepage from './pages/homepage'
-import Categorias from './pages/categorias'
-import Navbar from './components/navbar'
-import Signin from './pages/signIn'
-import Register from './pages/register'
-import Portfolio from './pages/portfolio'
-import Profile from './pages/profile'
+import React from "react";
+import "./App.css";
+import { connect, useSelector } from "react-redux";
+import Authentification from "./pages/authentification";
+import Dashboard from "./pages/dashboard";
 
-
-
-class App extends Component{
-  
-  render() {
-    
-  return (
-    <React.Fragment>
-      <Navbar
-      {...this.props}
-      />
-      <Switch>
-        <Route path="/homepage" component={Homepage}/>
-        <Route path="/categorias" component={Categorias}/>
-        <Route path="/sign_in"  component={Signin}/>
-        <Route path="/register" component={Register}/>
-        <Route path="/portfolio" component={Portfolio}/>
-        <Route path="/profile"  component={Profile}/>
-
-        <Redirect from="/" to="/homepage" />
-      </Switch>
-      
-    </React.Fragment>
-    );
-  }
+function AuthIsLoaded() {
+  const auth = useSelector((state) => state.firebase.auth);
+  if (auth.isEmpty) return true;
+  return false;
 }
+
+const App = () => {
+  if (AuthIsLoaded()) {
+    return <Authentification />;
+  } else {
+    return <Dashboard />;
+  }
+};
 
 export default App;
