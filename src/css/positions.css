@@ -1,0 +1,16 @@
+.to_the_left {
+
+    margin-left: 500%;
+}
+
+.center_text{
+    text-align: center;
+}
+
+.center_item {
+    align-items: center;
+}
+
+.margin_between {
+    margin: 1.5rem 1rem 1.5rem 1rem;
+}

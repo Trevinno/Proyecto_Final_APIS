@@ -1,0 +1,59 @@
+.body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+.btn {
+    @extend .body;
+  
+    border-radius: 0.2rem;
+    outline: none;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+  
+    &:disabled {
+      opacity: 0.5;
+    }
+    
+    font-size: 1.5rem;
+  }
+  
+  .btn:hover {
+    transition: 0.2s;
+    transform: scale(1.01);
+  }
+  
+  .btn:active {
+    transform: translateY(0.5rem);
+  }
+  
+  .btn--primary {
+    @extend .btn;
+  
+    width: 25rem;
+    background-color: blue;
+    color: rgb(255, 255, 255);
+    height: 6rem;
+    margin-top: 1rem;
+  }
+  
+  .btn--outline {
+    @extend .btn;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1.5px solid;
+    border-color: blue;
+    color: blue;
+  
+    width: 100%;
+    margin-top: 2rem;
+    height: 6rem;
+  }
+  
+  .google {
+    @extend .btn;
+    color: white;
+    border: white;
+    background-color: rgb(103, 103, 192);
+    background-color: none;
+  }
+  
