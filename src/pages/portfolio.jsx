@@ -1,7 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
+import {getJuanPerez} from "../state/mockData"
 import "../css/portfolio.scss"
 
 const Portfolio = () => {
+
+	let [user, setUser] = useState()
+    useEffect(() => {
+        setUser(getJuanPerez())
+    }, [])
+
+
+
+
     return (  
         <React.Fragment>
                 <main>
