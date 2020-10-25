@@ -8,6 +8,7 @@ import Signin from './pages/signIn'
 import Register from './pages/register'
 import Portfolio from './pages/portfolio'
 import Profile from './pages/profile'
+import Buy from './pages/buyItem'
 
 
 
@@ -27,6 +28,7 @@ class App extends Component{
         <Route path="/register" component={Register}/>
         <Route path="/portfolio" component={Portfolio}/>
         <Route path="/profile"  component={Profile}/>
+        <Route path="/buy_item"  component={Buy}/>
 
         <Redirect from="/" to="/homepage" />
       </Switch>

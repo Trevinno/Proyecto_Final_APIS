@@ -35,42 +35,13 @@ const Singin = () => {
   };
 
   const onGoogleLogin = () => {
-    // setLoading(true);
-    // var provider = new firebase.auth.GoogleAuthProvider();
-    // fireAuth
-    //   .signInWithPopup(provider)
-    //   .then((user) => {
-    //     setLoading(false);
-    //     return;
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     setLoading(false);
-    //     return;
-    //   });
+   
   };
 
 
-  // login with email
+
   const onMailLogin = () => {
-    // setLoading(true);
-    // let { email, password } = state;
-    // // let copy = { ...state };
-
-    // //create a credential to validate account
-    // let emailCred = firebase.auth.EmailAuthProvider.credential(email, password);
-    // fireAuth
-    //   .signInWithCredential(emailCred)
-
-    //   .then((userCred) => {
-    //     setLoading(false);
-    //     if (session) history.push("/session");
-    //     else history.goBack("/");
-    //   })
-    //   .catch((err) => {
-    //     setLoading(false);
-    //     setState({ ...state, error: err });
-    //   });
+  
   };
 
   return (
@@ -84,16 +55,13 @@ const Singin = () => {
           <br/>
           <input className="margin_between" type="submit"/>
         </form>
-
         <GoogleBtn
-        className="center_item"
+        className="center_item margin_left margin_between"
         onGoogleLogin={onGoogleLogin}
         />
-        <Button href="http://localhost:3000/homepage" className="margin_between center_item">Registrate</Button>
-
-
-
+        <Button href="http://localhost:3000/homepage" className="center_item margin_left margin_between center_item">Registrate</Button>
       </Container>
+    
 
 
 

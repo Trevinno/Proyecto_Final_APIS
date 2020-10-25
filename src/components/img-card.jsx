@@ -13,7 +13,8 @@ const Artwork = ({artista, nombre, url}) => {
                 <Card.Text>
                 {artista}
                 </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button variant="info ml-1">Visitar Artista</Button>
+                    <Button variant="danger ml-2">Comprar</Button>
                 </Card.Body>
             </Card>
             </div>
