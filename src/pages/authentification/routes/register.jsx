@@ -7,7 +7,7 @@ const Register = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = () => {
-    console.log("This is before your time");
+    
   };
   return (
     <React.Fragment>

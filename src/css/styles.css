@@ -1,8 +1,6 @@
-/* .img_size {
-    width: 200%;
-    height: auto;
-} */
-
-.little_margin {
-    margin-left: 1rem;
+.little_margin {
+        margin-left: 10px;
+}
+.middle_margin {
+        margin-left: 19rem;
 }
