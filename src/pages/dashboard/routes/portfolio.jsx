@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react';
-import {getJuanPerez, getArt} from "../state/mockData"
+import {getJuanPerez, getArt} from '../../../redux/mockdata'
 import {Card, Button, Container} from 'react-bootstrap'
 import "../../../css/portfolio.scss"
 import Artwork from "../../../components/img-card"

@@ -4,11 +4,17 @@ import firebase from "firebase";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-// import {getArt} from '../../'
+import {getArt} from '../../../redux/mockdata'
+import Artwork from '../../../components/img-card'
 import "../../../css/styles.css";
 
 const Homepage = ({ artwork }) => {
-  console.log(artwork);
+  
+  let [artworks, setArtworks] = useState([])
+    useEffect(() => {
+        setArtworks(getArt())
+    }, [])
+
   return (
     <React.Fragment>
        <div className="h2 text-center mb-4">Novedades</div>
