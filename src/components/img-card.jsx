@@ -14,7 +14,7 @@ const Artwork = ({artista, nombre, url}) => {
                 {artista}
                 </Card.Text>
                     <Button variant="info ml-1">Visitar Artista</Button>
-                    <Button variant="danger ml-2">Comprar</Button>
+                    <Button variant="danger ml-2" href="http://localhost:3000/buy_item">Comprar</Button>
                 </Card.Body>
             </Card>
             </div>

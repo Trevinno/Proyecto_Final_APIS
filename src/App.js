@@ -32,7 +32,6 @@ class App extends Component{
 
         <Redirect from="/" to="/homepage" />
       </Switch>
-      
     </React.Fragment>
     );
   }

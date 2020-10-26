@@ -4,11 +4,12 @@ import { Redirect, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { auth } from "../state/auth";
 import { useContext } from "react";
+import { Container, Button } from "react-bootstrap";
 import GoogleBtn from "../components/googleBtn"
 import "../css/_button.scss"
 import "../css/_login.scss"
 import "../css/positions.css"
-import { Container, Button } from "react-bootstrap";
+
 
 const Singin = () => {
   let session = true
@@ -59,7 +60,7 @@ const Singin = () => {
         className="center_item margin_left margin_between"
         onGoogleLogin={onGoogleLogin}
         />
-        <Button href="http://localhost:3000/homepage" className="center_item margin_left margin_between center_item">Registrate</Button>
+        <Button href="http://localhost:3000/register" className="center_item margin_left margin_between center_item">Registrate</Button>
       </Container>
     
 
