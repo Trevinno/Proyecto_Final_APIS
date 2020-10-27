@@ -3,6 +3,7 @@ import "./App.css";
 import { connect, useSelector } from "react-redux";
 import Authentification from "./pages/authentification";
 import Dashboard from "./pages/dashboard";
+import 'bootstrap/dist/css/bootstrap.css'
 
 function AuthIsLoaded() {
   const auth = useSelector((state) => state.firebase.auth);

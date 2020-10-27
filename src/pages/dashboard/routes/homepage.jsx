@@ -7,6 +7,7 @@ import { compose } from "redux";
 import {getArt} from '../../../redux/mockdata'
 import Artwork from '../../../components/img-card'
 import "../../../css/styles.css";
+import 'bootstrap/dist/css/bootstrap.css'
 
 const Homepage = ({ artwork }) => {
   
