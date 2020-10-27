@@ -6,6 +6,8 @@ import Portfolio from "./routes/portfolio";
 import Profile from "./routes/profile";
 
 const Dash = () => (
+
+  
   <Switch>
     <Route path="/homepage" component={Homepage} />
     <Route path="/categorias" component={Categorias} />
