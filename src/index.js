@@ -1,16 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import 'bootstrap/dist/css/bootstrap.css'
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import "bootstrap/dist/css/bootstrap.css";
+import ReduxWrapper from "./redux";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App  />
-  </BrowserRouter>,
-  document.getElementById('root')
+  <ReduxWrapper>
+    <BrowserRouter basename="/">
+      <App />
+    </BrowserRouter>
+  </ReduxWrapper>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
