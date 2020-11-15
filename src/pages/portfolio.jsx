@@ -53,6 +53,28 @@ const Portfolio = ({ profile, artworks }) => {
           </div>
           <hr />
         </div>
+        <div className="flex_parent">
+            <div className="flex_child">
+            <Button style={{
+              fontSize: '70%'
+            }} variant="info ml-1">Cambiar Foto de Perfil</Button>
+            </div>
+            <div className="flex_child">
+            <Button style={{
+              fontSize: '70%'
+            }} className="button_size" variant="info ml-1">Cambiar Foto de Fondo</Button>
+            </div>
+            <div className="flex_child">
+            <Button style={{
+              fontSize: '70%'
+            }} className="button_size" variant="info ml-1" href="http://localhost:3000/agregarArte">Agregar Arte</Button>
+            </div>
+            <div className="flex_child">
+            <Button style={{
+              fontSize: '70%'
+            }} className="button_size" variant="info ml-1">Ver Ofertas</Button>
+            </div>
+        </div>
         <div className="h3 text-center mb-4">Trabajo de Artista</div>
         <divBox className="little_margin">
           <Container-fluid className="item mx-4 little_margin">

@@ -30,7 +30,7 @@ const BuyItem = () => {
         <div className="area">
         <div className="ckeckarea">
         <input type="checkbox" name="checkbox1" id="checkbox1" onclick="autofilling(this.form)" />
-        <label for="checkbox1">Check this box if order info and sending info are the same.</label>
+        <label for="checkbox1">Estoy de acuerdo con la polica de la empresa.</label>
         </div>
         </div>
         <div className="black_border flex_row row">

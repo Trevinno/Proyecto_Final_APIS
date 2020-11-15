@@ -15,3 +15,31 @@
     margin: 2% 1% 2% 3%;
 }
 
+.margin_bot {
+    font-size: 3rem;
+    margin-bottom: 2%;
+}
+
+.flex_position {
+    display: flex;
+    justify-content: center;
+
+}
+
+.flex_child {
+    flex: none;
+    width: 100%;
+}
+
+/* .flex_child {
+    flex:4
+} */
+
+.flex_child2 {
+    flex:4
+}
+
+
+.flex_child3 {
+    flex:1
+}

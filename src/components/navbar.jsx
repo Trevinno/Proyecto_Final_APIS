@@ -22,7 +22,7 @@ const NavbarCo = ({history}) => {
         <NavDropdown.Item href="http://localhost:3000/profile">Perfil</NavDropdown.Item>
         <NavDropdown.Item href="http://localhost:3000/portfolio">Portafolio</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="http://localhost:3000/sign_in" >Iniciar Sesion</NavDropdown.Item>
+        <NavDropdown.Item href="http://localhost:3000/sign_in">Iniciar Sesion</NavDropdown.Item>
         <NavDropdown.Item onClick={() => {
           console.log("Closed Session")
         }}>Cerrar Sesion</NavDropdown.Item>

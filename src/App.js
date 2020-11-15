@@ -10,6 +10,7 @@ import Register from "./pages/register";
 import Portfolio from "./pages/portfolio";
 import Profile from "./pages/profile";
 import Buy from "./pages/buyItem";
+import AgregarArte from "./pages/agregarArte"
 
 function AuthIsLoaded() {
   const auth = useSelector((state) => state.firebase.auth);
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/profile" component={Profile} />
           <Route path="/buy_item" component={Buy} />
+          <Route path="/agregarArte" component={AgregarArte} />
 
           <Redirect from="/" to="/homepage" />
         </Switch>
