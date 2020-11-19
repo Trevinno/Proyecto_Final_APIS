@@ -16,14 +16,18 @@ const Homepage = ({ artworks }) => {
         <Container-fluid className="item mx-4 little_margin">
           <div className="row equal-height little_margin ml-3">
             {artworks &&
-              artworks.map((art) => (
-                <Artwork
-                  key={art._id}
-                  artista={art.artista}
-                  nombre={art.nombre}
-                  url={art.url}
-                />
-              ))}
+              artworks.map((art) => {
+                return (
+                  <Artwork
+                    key={art._id}
+                    artista={art.artista}
+                    nombre={art.nombre}
+                    url={art.url}
+                    artistID={art.artistID}
+                    artID={art.id}
+                  />
+                );
+              })}
           </div>
         </Container-fluid>
       </div>
