@@ -8,7 +8,6 @@ import { getArt } from "../state/mockData";
 import Artwork from "../components/img-card";
 
 const Homepage = ({ artworks }) => {
-  console.log(artworks);
   return (
     <React.Fragment>
       <div className="h2 text-center mb-4">Novedades</div>

@@ -7,13 +7,14 @@ import { Card, Button, Container } from "react-bootstrap";
 import "../css/portfolio.scss";
 import Artwork from "../components/img-card";
 
-const Portfolio = ({ profile, artworks }) => {
-  let backgroundPic = `url(${profile.backgroundpic}) center no-repeat`;
-  let profilePic = `url(${profile.profilepic}) center`;
-
+const Portfolio = ({ profile, artworks, Usuario }) => {
   // https://pm1.narvii.com/6484/c0636108d387d4859371b96b0892a42425a2ed0f_00.jpg
   // http://simplyleonardodicaprio.com/wp-content/uploads/leo-1.jpg
-
+  if (Usuario === undefined || Usuario === null) {
+    return null;
+  }
+  let backgroundPic = `url(${Usuario.backgroundpic}) center no-repeat`;
+  let profilePic = `url(${Usuario.profilepic}) center`;
   return (
     <React.Fragment>
       <main>
@@ -40,40 +41,64 @@ const Portfolio = ({ profile, artworks }) => {
         </div>
         <div className="details">
           <h3>
-            {profile.firstName} {profile.lastName}
+            {Usuario.firstName} {Usuario.lastName}
           </h3>
-          <p>{profile.headline}</p>
+          <p>{Usuario.headline}</p>
         </div>
         <div className="container bio">
           <div className="title">
             <h6>Biografia</h6>
           </div>
           <div class="content">
-            <p>{profile.description}</p>
+            <p>{Usuario.description}</p>
           </div>
           <hr />
         </div>
         <div className="flex_parent">
-            <div className="flex_child">
-            <Button style={{
-              fontSize: '70%'
-            }} variant="info ml-1">Cambiar Foto de Perfil</Button>
-            </div>
-            <div className="flex_child">
-            <Button style={{
-              fontSize: '70%'
-            }} className="button_size" variant="info ml-1">Cambiar Foto de Fondo</Button>
-            </div>
-            <div className="flex_child">
-            <Button style={{
-              fontSize: '70%'
-            }} className="button_size" variant="info ml-1" href="http://localhost:3000/agregarArte">Agregar Arte</Button>
-            </div>
-            <div className="flex_child">
-            <Button style={{
-              fontSize: '70%'
-            }} className="button_size" variant="info ml-1">Ver Ofertas</Button>
-            </div>
+          <div className="flex_child">
+            <Button
+              style={{
+                fontSize: "70%",
+              }}
+              variant="info ml-1"
+            >
+              Cambiar Foto de Perfil
+            </Button>
+          </div>
+          <div className="flex_child">
+            <Button
+              style={{
+                fontSize: "70%",
+              }}
+              className="button_size"
+              variant="info ml-1"
+            >
+              Cambiar Foto de Fondo
+            </Button>
+          </div>
+          <div className="flex_child">
+            <Button
+              style={{
+                fontSize: "70%",
+              }}
+              className="button_size"
+              variant="info ml-1"
+              href="http://localhost:3000/agregarArte"
+            >
+              Agregar Arte
+            </Button>
+          </div>
+          <div className="flex_child">
+            <Button
+              style={{
+                fontSize: "70%",
+              }}
+              className="button_size"
+              variant="info ml-1"
+            >
+              Ver Ofertas
+            </Button>
+          </div>
         </div>
         <div className="h3 text-center mb-4">Trabajo de Artista</div>
         <divBox className="little_margin">
@@ -81,7 +106,7 @@ const Portfolio = ({ profile, artworks }) => {
             <div className="row equal-height little_margin ml-3">
               {artworks &&
                 artworks.map((art) => {
-                  if (art.artistID !== profile.userID) {
+                  if (art.artistID !== Usuario.userID) {
                     return null;
                   }
                   return (
@@ -101,10 +126,16 @@ const Portfolio = ({ profile, artworks }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.match.params.id;
+  console.log(id);
+  const Usuarios = state.firestore.data.Usuarios;
+  const Usuario = Usuarios ? Usuarios[id] : null;
+  console.log(Usuario);
   return {
     profile: state.firebase.profile,
     artworks: state.firestore.ordered.artworks,
+    Usuario: Usuario,
   };
 };
 
@@ -116,6 +147,9 @@ export default compose(
     return [
       {
         collection: "artworks",
+      },
+      {
+        collection: "Usuarios",
       },
     ];
   })
