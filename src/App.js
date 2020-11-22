@@ -8,6 +8,7 @@ import Navbar from "./components/navbar";
 import Signin from "./pages/signIn";
 import Register from "./pages/register";
 import Portfolio from "./pages/portfolio";
+import Ordenes from "./pages/ordenes";
 import Profile from "./pages/profile";
 import Buy from "./pages/buyItem";
 import AgregarArte from "./pages/agregarArte";
@@ -36,6 +37,7 @@ const App = () => {
       <React.Fragment>
         <Navbar />
         <Switch>
+          <Route path="/ordenes" component={Ordenes} />
           <Route path="/homepage" component={Homepage} />
           <Route path="/categorias" component={Categorias} />
           <Route path="/portfolio/:id" component={Portfolio} />

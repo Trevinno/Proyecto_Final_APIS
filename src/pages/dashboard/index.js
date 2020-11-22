@@ -5,6 +5,7 @@ import Categorias from "./routes/categorias";
 import Portfolio from "./routes/portfolio";
 import Profile from "./routes/profile";
 import Navbar from "../../components/navbar";
+import Ordenes from "./routes/ordenes";
 import "bootstrap/dist/css/bootstrap.css";
 
 function AuthIsLoaded() {
@@ -22,6 +23,7 @@ const Dash = () => {
         <Navbar />
         <Switch>
           <Route path="/homepage" component={Homepage} />
+          <Route path="/ordenes" component={Ordenes} />
           <Route path="/categorias" component={Categorias} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/profile" component={Profile} />

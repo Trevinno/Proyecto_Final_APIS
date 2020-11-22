@@ -6,6 +6,7 @@ import { compose } from "redux";
 import { Card, Button, Container } from "react-bootstrap";
 import "../css/portfolio.scss";
 import Artwork from "../components/img-card";
+import { Link } from "react-router-dom";
 
 const Portfolio = ({ profile, artworks, Usuario }) => {
   // https://pm1.narvii.com/6484/c0636108d387d4859371b96b0892a42425a2ed0f_00.jpg
@@ -85,6 +86,9 @@ const Portfolio = ({ profile, artworks, Usuario }) => {
               variant="info ml-1"
               href="http://localhost:3000/agregarArte"
             >
+              {/* <Link style={{ color: 'inherit', textDecoration: 'inherit', width: '100%', height: '100%' }} to="agregarArte" >
+              Agregar Arte
+              </Link> */}
               Agregar Arte
             </Button>
           </div>
@@ -95,7 +99,11 @@ const Portfolio = ({ profile, artworks, Usuario }) => {
               }}
               className="button_size"
               variant="info ml-1"
+              href="http://localhost:3000/ordenes"
             >
+              {/* <Link style={{ color: 'inherit', textDecoration: 'inherit', width: '100%', height: '100%' }} to="ofertas" >
+              Ver Ofertas
+              </Link> */}
               Ver Ofertas
             </Button>
           </div>

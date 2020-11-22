@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import firebase from "firebase";
 import {
@@ -14,46 +15,58 @@ import "../css/positions.css";
 const NavbarCo = ({ history, profile }) => {
   const navCollapsed = true;
   console.log(profile);
+  const website = "http://localhost:3000"
+  // href="http://localhost:3000/homepage"
   return (
     <React.Fragment>
       <Navbar className="mb-5" bg="light" expand="lg">
-        <Navbar.Brand
-          href="http://localhost:3000/homepage"
-          className="text-dark display-3 h3"
-        >
+        <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/homepage" className="mr-3">
           <img
             alt="Logo ml-3"
             src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
             width="2%"
             height="2%"
           />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-right">
-            <Nav.Link href="http://localhost:3000/homepage" className="mr-3">
+
+            <Nav.Link className="mr-3">
+              <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="/homepage">
               Pagina Inicial
-            </Nav.Link>
-            <Nav.Link href="http://localhost:3000/categorias" className="mr-3">
+            </Link>
+            </Nav.Link>
+            
+            <Nav.Link className="mr-3">
+            <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="/categorias" >
               Categorias
+            </Link>
             </Nav.Link>
+            
             <NavDropdown
               title="Cuenta"
               className="mr-5"
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item href="http://localhost:3000/profile">
-                Perfil
+              <NavDropdown.Item>
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/profile" >
+              Perfil
+              </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item
-                href={"http://localhost:3000/portfolio/" + profile.userID}
-              >
-                Portafolio
+
+              <NavDropdown.Item>
+                <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to={"/portfolio/" + profile.userID} >
+              Portafolio
+              </Link>
               </NavDropdown.Item>
+
               <NavDropdown.Divider />
               {profile.isEmpty ? (
-                <NavDropdown.Item href="http://localhost:3000/sign_in">
-                  Iniciar Sesion
+                <NavDropdown.Item>
+                <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="sign_in" >
+                Iniciar Sesion
+                </Link>
                 </NavDropdown.Item>
               ) : (
                 <NavDropdown.Item
